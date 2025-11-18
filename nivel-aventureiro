@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+int main() {
+
+    // ============================ TORRE ============================
+    // A torre anda 5 casas para a direita usando FOR
+    int casas_torre = 5;
+    int i;
+
+    printf("=== Movimento da TORRE ===\n");
+    for(i = 1; i <= casas_torre; i++){
+        printf("Direita\n");
+    }
+
+    // ============================ BISPO ============================
+    // Bispo se move 5 casas na diagonal (cima + direita) usando WHILE
+    int casas_bispo = 5;
+    int j = 1;
+
+    printf("\n=== Movimento do BISPO ===\n");
+    while(j <= casas_bispo){
+        printf("Cima, Direita\n");
+        j++;
+    }
+
+    // ============================ RAINHA ============================
+    // Rainha anda 8 casas para a esquerda usando DO-WHILE
+    int casas_rainha = 8;
+    int k = 1;
+
+    printf("\n=== Movimento da RAINHA ===\n");
+    do {
+        printf("Esquerda\n");
+        k++;
+    } while(k <= casas_rainha);
+
+
+    // ============================ CAVALO ============================
+    // Cavalo: 2 casas para baixo e 1 para esquerda
+    // → OBRIGATORIAMENTE loops ANINHADOS
+    // → 1 loop FOR + 1 loop WHILE
+
+    int movimentos_baixo = 2;
+    int movimentos_esquerda = 1;
+    int x, y;
+
+    printf("\n=== Movimento do CAVALO ===\n");
+
+    // 🔹 Loop FOR controla o movimento para baixo
+    for(x = 1; x <= movimentos_baixo; x++){
+        printf("Baixo\n");
+
+        // 🔹 Loop WHILE para a parte final (esquerda), executa apenas no último ciclo
+        if(x == movimentos_baixo){
+            y = 1;
+            while(y <= movimentos_esquerda){
+                printf("Esquerda\n");
+                y++;
+            }
+        }
+    }
+
+    return 0;
+}
